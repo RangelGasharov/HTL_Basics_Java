@@ -14,10 +14,10 @@ public class IfBedingung_1 {
             System.out.println("The number is bigger than 50 and smaller than 90.");
         } else if (randomNumber<10){
             System.out.println(randomNumber);
-            System.out.println("The number is smaller than 10");
+            System.out.println("The number is smaller than 10.");
         } else {
             System.out.println(randomNumber);
-            System.out.println("The number is between 10 and 50");
+            System.out.println("The number is between 10 and 50.");
         }
     }
 }
