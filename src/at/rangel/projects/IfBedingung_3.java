@@ -11,7 +11,6 @@ public class IfBedingung_3 {
         System.out.println("First number: " + randomNumber1);
         System.out.println("Second number: " + randomNumber2);
 
-
         if((randomNumber1 < randomNumber2) &&(randomNumber1 < 50)){
             System.out.println("Zahl 1 ist kleiner als Zahl 2 und Mini");
         };
