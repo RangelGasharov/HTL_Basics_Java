@@ -15,11 +15,12 @@ public class WhileLoop_2 {
 
                 if (randomValue == 15 || randomValue == 25) {
                     System.out.println("+" + randomValue);
+                    System.out.println("Finish value: " + value);
                     isFinished = true;
                 } else {
                     value += randomValue;
                     System.out.println("+" + randomValue);
-                    System.out.println("Wert: " + value);
+                    System.out.println("Current value: " + value);
 
             }
 
