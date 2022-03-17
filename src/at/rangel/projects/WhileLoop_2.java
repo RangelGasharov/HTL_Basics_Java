@@ -8,13 +8,13 @@ public class WhileLoop_2 {
         Random random = new Random();
         boolean isFinished = false;
         int value = 0;
-
+        System.out.println("Starting value: " + value);
         while(!isFinished){
 
             int randomValue = random.nextInt(10,31);
 
                 if (randomValue == 15 || randomValue == 25) {
-                    System.out.println("+" + randomValue);
+                    System.out.println(randomValue);
                     System.out.println("Finish value: " + value);
                     isFinished = true;
                 } else {
@@ -25,6 +25,6 @@ public class WhileLoop_2 {
             }
 
         }
-        System.out.println("Finished");
+        System.out.println("Finished!");
     }
 }
