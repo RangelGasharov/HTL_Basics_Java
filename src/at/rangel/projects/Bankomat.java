@@ -34,12 +34,14 @@ public class Bankomat {
                 System.out.println("Wählen Sie den Wert, den Sie an ihr Konto abheben wollen.");
                 int withdrawedAmount = 0;
                 withdrawedAmount = scanner.nextInt();
-                if(bankBalance < withdrawedAmount) {
+                if (bankBalance < withdrawedAmount) {
                     System.out.println("Sie können nicht mehr Geld abheben, als Sie besitzen!");
                     System.out.println();
-                } else {bankBalance = bankBalance - withdrawedAmount;
+                } else {
+                    bankBalance = bankBalance - withdrawedAmount;
                     System.out.println("Kontostand nach Abhebung: " + bankBalance);
-                    System.out.println();}
+                    System.out.println();
+                }
             }
             if (selectionOfTask == 3) {
                 System.out.println();
