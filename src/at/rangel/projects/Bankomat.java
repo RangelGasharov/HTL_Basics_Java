@@ -23,20 +23,23 @@ public class Bankomat {
 
             if (selectionOfTask == 1) {
                 System.out.println();
-                System.out.println("Wählen Sie den Wert den Sie abheben wollen.");
+                System.out.println("Wählen Sie den Wert, den Sie an ihr Konto überweisen wollen.");
                 int depositedAmount = scanner.nextInt();
                 bankBalance = bankBalance + depositedAmount;
-                System.out.println("Kontostand nach Abhebung: " + bankBalance);
+                System.out.println("Kontostand nach Überweisung: " + bankBalance);
                 System.out.println();
             }
             if (selectionOfTask == 2) {
                 System.out.println();
-                System.out.println("Wählen Sie den Wert den Sie entziehen wollen.");
+                System.out.println("Wählen Sie den Wert, den Sie an ihr Konto abheben wollen.");
                 int withdrawedAmount = 0;
                 withdrawedAmount = scanner.nextInt();
-                bankBalance = bankBalance - withdrawedAmount;
-                System.out.println("Kontostand nach Überweisung: " + bankBalance);
-                System.out.println();
+                if(bankBalance < withdrawedAmount) {
+                    System.out.println("Sie können nicht mehr Geld abheben, als Sie besitzen!");
+                    System.out.println();
+                } else {bankBalance = bankBalance - withdrawedAmount;
+                    System.out.println("Kontostand nach Abhebung: " + bankBalance);
+                    System.out.println();}
             }
             if (selectionOfTask == 3) {
                 System.out.println();
