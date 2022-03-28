@@ -47,6 +47,10 @@ public class Bankomat {
                 System.out.println();
                 System.out.println("Jetztigen Kontostand:" + bankBalance);
                 System.out.println();
+            } else {
+                System.out.println();
+                System.out.println("Bitte wählen Sie eine gültige Funktionsnummer!");
+                System.out.println();
             }
         }
     }
