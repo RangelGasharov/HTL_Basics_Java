@@ -36,7 +36,6 @@ public class DiceGame {
                     pointAmountText = " points";
                     System.out.println("Computer has won by " + pointsDifference + pointAmountText + ".");
                     break;
-
             }
 
         } else if (pipTotalPerson > pipTotalComputer) {
