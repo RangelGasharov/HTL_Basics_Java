@@ -14,13 +14,14 @@ public class DiceGame {
             pipTotalPerson += randomValue;
         }
         System.out.println("Pip Total of Player: " + pipTotalPerson);
+        System.out.println();
 
         for (int i = 0; i < 7; i++) {
             int randomValue = random.nextInt(0, 7);
             pipTotalComputer += randomValue;
         }
         System.out.println("Pip Total of Computer: " + pipTotalComputer);
-
+        System.out.println();
 
         if (pipTotalComputer > pipTotalPerson) {
 
@@ -29,11 +30,11 @@ public class DiceGame {
             switch (pointsDifference) {
                 case 1:
                     String pointAmountText = " point";
-                    System.out.println("Player has won by " + pointsDifference + pointAmountText);
+                    System.out.println("Computer has won by " + pointsDifference + pointAmountText + ".");
                     break;
                 default:
                     pointAmountText = " points";
-                    System.out.println("Player has won by " + pointsDifference + pointAmountText);
+                    System.out.println("Computer has won by " + pointsDifference + pointAmountText + ".");
                     break;
 
             }
@@ -45,11 +46,11 @@ public class DiceGame {
             switch (pointsDifference) {
                 case 1:
                     String pointAmountText = " point";
-                    System.out.println("Player has won by " + pointsDifference + pointAmountText);
+                    System.out.println("Player has won by " + pointsDifference + pointAmountText + ".");
                     break;
                 default:
                     pointAmountText = " points";
-                    System.out.println("Player has won by " + pointsDifference + pointAmountText);
+                    System.out.println("Player has won by " + pointsDifference + pointAmountText + ".");
                     break;
             }
 
