@@ -20,34 +20,47 @@ public class Bankomat {
             System.out.println();
 
             selectionOfTask = scanner.nextInt();
+//if(selectionOfTask != (int)selectionOfTask){System.out.println("Bitte wählen Sie eine Zahl aus!");
 
-            if (selectionOfTask == 1) {
-                System.out.println();
-                System.out.println("Wählen Sie den Wert, den Sie an ihr Konto überweisen wollen.");
-                int depositedAmount = scanner.nextInt();
-                bankBalance = bankBalance + depositedAmount;
-                System.out.println("Kontostand nach Überweisung: " + bankBalance);
-                System.out.println();
-            }
-            if (selectionOfTask == 2) {
-                System.out.println();
-                System.out.println("Wählen Sie den Wert, den Sie an ihr Konto abheben wollen.");
-                int withdrawedAmount = 0;
-                withdrawedAmount = scanner.nextInt();
-                if (bankBalance < withdrawedAmount) {
-                    System.out.println("Sie können nicht mehr Geld abheben, als Sie besitzen!");
+
+            switch(selectionOfTask){
+                case 1:
                     System.out.println();
-                } else {
-                    bankBalance = bankBalance - withdrawedAmount;
-                    System.out.println("Kontostand nach Abhebung: " + bankBalance);
+                    System.out.println("Wählen Sie den Wert, den Sie an ihr Konto überweisen wollen.");
+                    int depositedAmount = scanner.nextInt();
+                    bankBalance = bankBalance + depositedAmount;
+                    System.out.println("Kontostand nach Überweisung: " + bankBalance);
                     System.out.println();
-                }
+                    break;
+                case 2:
+                    System.out.println();
+                    System.out.println("Wählen Sie den Wert, den Sie an ihr Konto abheben wollen.");
+                    int withdrawedAmount = scanner.nextInt();
+                    if (bankBalance < withdrawedAmount) {
+                        System.out.println("Sie können nicht mehr Geld abheben, als Sie besitzen!");
+                        System.out.println("Kontostand nach unerfolgreiche Abhebung: " + bankBalance);
+                        System.out.println();
+                    } else {
+                        bankBalance = bankBalance - withdrawedAmount;
+                        System.out.println("Kontostand nach Abhebung: " + bankBalance);
+                        System.out.println();
+                    }
+                    break;
+                case 3:
+                    System.out.println();
+                    System.out.println("Jetztigen Kontostand:" + bankBalance);
+                    System.out.println();
+                    break;
+
+                case 4:
+                    System.out.println("Sie werden gleich abgemeldet. Auf Wiedersehen!");
+                    break;
+                default :
+                    System.out.println("Wählen Sie eine gültige Funktion aus!");
+
+
             }
-            if (selectionOfTask == 3) {
-                System.out.println();
-                System.out.println("Jetztigen Kontostand:" + bankBalance);
-                System.out.println();
-            }
+
         }
     }
 }

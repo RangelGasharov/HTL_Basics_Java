@@ -2,7 +2,7 @@ package at.rangel.projects;
 
 import java.util.Scanner;
 
-public class Casaer_Encryption {
+public class Caeser_Encryption {
 
     int selectionOfTranslationType = 0;
     Scanner scanner = new Scanner(System.in);
