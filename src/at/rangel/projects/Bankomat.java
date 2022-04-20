@@ -20,7 +20,12 @@ public class Bankomat {
             System.out.println();
 
             selectionOfTask = scanner.nextInt();
-//if(selectionOfTask != (int)selectionOfTask){System.out.println("Bitte wählen Sie eine Zahl aus!");
+
+            /* if(selectionOfTask == (int)selectionOfTask){
+                System.out.println("x is an integer");
+            } else{
+
+            }*/
 
 
             switch(selectionOfTask){
@@ -32,6 +37,7 @@ public class Bankomat {
                     System.out.println("Kontostand nach Überweisung: " + bankBalance);
                     System.out.println();
                     break;
+
                 case 2:
                     System.out.println();
                     System.out.println("Wählen Sie den Wert, den Sie an ihr Konto abheben wollen.");
@@ -46,6 +52,7 @@ public class Bankomat {
                         System.out.println();
                     }
                     break;
+
                 case 3:
                     System.out.println();
                     System.out.println("Jetztigen Kontostand:" + bankBalance);
@@ -55,9 +62,9 @@ public class Bankomat {
                 case 4:
                     System.out.println("Sie werden gleich abgemeldet. Auf Wiedersehen!");
                     break;
+
                 default :
                     System.out.println("Wählen Sie eine gültige Funktion aus!");
-
 
             }
 
