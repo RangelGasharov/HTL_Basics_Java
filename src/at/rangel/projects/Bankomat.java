@@ -1,5 +1,6 @@
 package at.rangel.projects;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Bankomat {
@@ -18,17 +19,13 @@ public class Bankomat {
             System.out.println("3 - Kontostand");
             System.out.println("4 - Ende");
             System.out.println();
-
-            selectionOfTask = scanner.nextInt();
-
-            /* if(selectionOfTask == (int)selectionOfTask){
-                System.out.println("x is an integer");
-            } else{
-
-            }*/
-
-
-            switch(selectionOfTask){
+            try {
+                selectionOfTask = scanner.nextInt();
+            } catch (InputMismatchException e) {
+                System.out.println("Geben Sie bitte einen richtigen Wert aus");
+                scanner.next();
+            }
+            switch (selectionOfTask) {
                 case 1:
                     System.out.println();
                     System.out.println("Wählen Sie den Wert, den Sie an ihr Konto überweisen wollen.");
@@ -63,7 +60,7 @@ public class Bankomat {
                     System.out.println("Sie werden gleich abgemeldet. Auf Wiedersehen!");
                     break;
 
-                default :
+                default:
                     System.out.println("Wählen Sie eine gültige Funktion aus!");
 
             }
@@ -71,3 +68,5 @@ public class Bankomat {
         }
     }
 }
+
+/*https://www.java-forum.org/thema/inputmismatchexception-try-and-catch.176051/*/
