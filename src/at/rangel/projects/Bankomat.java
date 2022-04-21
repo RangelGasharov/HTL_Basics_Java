@@ -22,7 +22,7 @@ public class Bankomat {
             try {
                 selectionOfTask = scanner.nextInt();
             } catch (InputMismatchException e) {
-                System.out.println("Geben Sie bitte einen richtigen Wert aus");
+                System.out.println("");
                 scanner.next();
             }
             switch (selectionOfTask) {
@@ -62,6 +62,7 @@ public class Bankomat {
 
                 default:
                     System.out.println("Wählen Sie eine gültige Funktion aus!");
+                    System.out.println();
 
             }
 
