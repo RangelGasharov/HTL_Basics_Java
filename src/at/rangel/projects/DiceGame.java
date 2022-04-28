@@ -35,13 +35,13 @@ public class DiceGame {
 
                 case 1:
                     for (int i = 0; i < 7; i++) {
-                        int randomValue = random.nextInt(0, 7);
+                        int randomValue = random.nextInt(1, 7);
                         pipTotalPerson += randomValue;
                     }
                     System.out.println("Pip Total of Player: " + pipTotalPerson);
 
                     for (int i = 0; i < 7; i++) {
-                        int randomValue = random.nextInt(0, 7);
+                        int randomValue = random.nextInt(1, 7);
                         pipTotalComputer += randomValue;
                     }
                     System.out.println("Pip Total of Computer: " + pipTotalComputer);
