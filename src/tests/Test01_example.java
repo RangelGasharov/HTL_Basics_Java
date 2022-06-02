@@ -5,8 +5,8 @@ import java.util.Random;
 public class Test01_example {
     public static void main(String[] args) {
         Random random = new Random();
-        int randomNumber1 = random.nextInt(0, 1000);
-        int randomNumber2 = random.nextInt(0, 1000);
+        int randomNumber1 = random.nextInt(0, 1001);
+        int randomNumber2 = random.nextInt(0, 1001);
 
         System.out.println("First random number: " + randomNumber1);
         System.out.println("Second random number: " + randomNumber2);
