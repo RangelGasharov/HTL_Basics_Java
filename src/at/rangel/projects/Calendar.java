@@ -10,21 +10,42 @@ public class Calendar {
         int[][] calendar = new int[6][7];
 
         for (int i = 0; i < nameOfTheDays.length; i++) {
-            String seperator = "|";
-            if (i == 0) {
-                seperator = "";
+            String seperator = " | ";
+            String endingSeperator = "";
+
+            if (i == nameOfTheDays.length - 1) {
+                endingSeperator = "|";
             }
-            System.out.print(seperator + nameOfTheDays[i]);
+            if (i == 0) {
+                seperator = "| ";
+            }
+            System.out.print(seperator + nameOfTheDays[i] + endingSeperator);
         }
         System.out.println();
 
         for (int i = 0; i < calendar.length; i++) {
             for (int j = 0; j < calendar[i].length; j++) {
-                String seperator = "|";
-                if (j == 0) {
-                    seperator = "";
+                String seperator = "  | ";
+                String endingSeperator = "";
+
+                calendar[i][j] = i + j;
+
+                if (j == calendar.length) {
+                    calendar[i][j] = i + j;
+                    endingSeperator = " |";
+                    if (calendar[i][j] >= 10) {
+                        endingSeperator = "|";
+                    }
                 }
-                System.out.print(seperator + calendar[i][j]);
+
+                if (calendar[i][j] > 10) {
+                    seperator = " | ";
+                }
+                if (j == 0) {
+                    seperator = "| ";
+                }
+
+                System.out.print(seperator + calendar[i][j] + endingSeperator);
             }
             System.out.println();
         }
