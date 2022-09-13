@@ -8,40 +8,52 @@ import java.util.Scanner;
 public class GuessingWords {
     public static void main(String[] args) {
         boolean wordWasGuessed = false;
-        int totalTries = 0;
+        int availableTries = 5;
 
         String[] wordsToGuess = {"apple", "bench", "chief", "domino"};
         Random random = new Random();
         int randomNumber = random.nextInt(wordsToGuess.length);
 
         String guessingWord = wordsToGuess[randomNumber];
-        System.out.println(guessingWord);
-
         char[] guessingWordAsArray = guessingWord.toCharArray();
-        for (int i = 0; i <= guessingWordAsArray.length - 1; i++) {
-            System.out.print(guessingWordAsArray[i] + " ");
-        }
-        System.out.println(" ");
 
         char[] censoredGuessedWordAsArray = new char[guessingWordAsArray.length];
         Arrays.fill(censoredGuessedWordAsArray, '*');
-        for (int i = 0; i <= censoredGuessedWordAsArray.length - 1; i++) {
-            System.out.print(censoredGuessedWordAsArray[i] + " ");
-        }
 
         Scanner scanner = new Scanner(System.in);
 
-        while (!wordWasGuessed) {
+        while (!wordWasGuessed && availableTries > 0) {
+            for (int i = 0; i <= censoredGuessedWordAsArray.length - 1; i++) {
+                System.out.print(censoredGuessedWordAsArray[i]);
+            }
+            System.out.println();
             System.out.println("Write down your guessing word.");
 
             try {
                 String wordFromPlayer = scanner.next();
-                if (wordFromPlayer == guessingWord) {
+                char[] wordFromPlayerAsArray = wordFromPlayer.toCharArray();
+
+                if (guessingWordAsArray.length != wordFromPlayerAsArray.length) {
+                    System.out.println("Your guess has to have the same length as the searched word!");
+                    scanner.next();
+                }
+
+                for (int i = 0; i <= wordFromPlayerAsArray.length - 1; i++) {
+                    if (wordFromPlayerAsArray[i] == guessingWordAsArray[i]) {
+                        censoredGuessedWordAsArray[i] = guessingWordAsArray[i];
+                    }
+                }
+
+                availableTries -= 1;
+                System.out.println("Available Tries: " + availableTries);
+
+                boolean wordIsCorrect = Arrays.equals(guessingWordAsArray, wordFromPlayerAsArray);
+                if (wordIsCorrect) {
                     System.out.println("You guessed the word correctly!");
+                    wordWasGuessed = true;
                 }
             } catch (InputMismatchException e) {
-                System.out.println("");
-                scanner.next();
+                System.out.println("Please write down a word with the same length as the censored text!");
             }
         }
     }
