@@ -2,25 +2,27 @@ package at.rangel.projects;
 
 public class ObjectOrientation_0 {
     public static void main(String[] args) {
-        int a = 7;
 
-        Car c1 = new Car();
-        c1.brand = "Audi";
-        c1.fuelConsumption = 7;
-        c1.serialNumber = "A8237";
-        c1.fuelAmount = 70;
+        Car c1 = new Car(7, "Audi", "A8237", 70);
 
-        Car c2 = new Car();
-        c2.brand = "Mercedes";
-        c2.fuelConsumption = 6;
-        c2.serialNumber = "M2712";
-        c2.fuelAmount = 20;
+        Car c2 = new Car(6, "Mercedes", "M2712", 20);
 
-        System.out.println(c2.fuelAmount);
-        c2.drive();
-        System.out.println(c2.fuelAmount);
+        Car c3 = new Car(5, "BMW", "B7310", 20);
 
+        System.out.println("Fuel amount of car 2: " + c2.fuelAmount);
+        for (int i = 0; i < 5; i++) {
+            c2.drive();
+            c2.getRemainingRange();
+            //c2.turboBoost();
+        }
+
+        System.out.println();
+        c2.honk(3);
+        c2.toBreak();
+
+        System.out.println("\nSerial numbers:");
         System.out.println(c1.serialNumber);
         System.out.println(c2.serialNumber);
+        System.out.println(c3.serialNumber);
     }
 }
