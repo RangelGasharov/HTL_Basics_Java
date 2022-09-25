@@ -33,12 +33,19 @@ public class Calendar {
         int monthOfYear = Integer.parseInt(currentDate.format(formattingObjectMonthOnly));
         int currentYear = Integer.parseInt(currentDate.format(formattingObjectYearOnly));
         String formattedDate = currentDate.format(formattingObject);
+        String currentYearString = String.valueOf(currentYear);
         String currentMonth = namesOfMonths[monthOfYear - 1];
         Month month = Month.of(monthOfYear);
         boolean isLeapYear = currentYear % 4 == 0;
         int amountOfDaysInMonth = month.length(isLeapYear);
+        int titleLengthConsole = 42;
+        int repeatNTimes = titleLengthConsole / 2 - currentMonth.length() / 2 - currentYearString.length() / 2;
+        if (repeatNTimes <= 0) {
+            repeatNTimes = 1;
+        }
 
-        System.out.println(ANSI_BLACK + ANSI_WHITE_BACKGROUND + "              " + currentMonth + " " + currentYear + "              " + ANSI_RESET);
+        System.out.println();
+        System.out.println(ANSI_BLACK + ANSI_WHITE_BACKGROUND + " ".repeat(repeatNTimes - 1) + currentMonth + " " + currentYearString + " ".repeat(repeatNTimes) + ANSI_RESET);
 
         for (int i = 0; i < nameOfTheDays.length; i++) {
             String separator = " | ";
@@ -75,7 +82,7 @@ public class Calendar {
             }
 
             if (i == dayOfMonth) {
-                System.out.print(separator + ANSI_WHITE_BACKGROUND + ANSI_BLACK + i + endingSeparator + ANSI_RESET);
+                System.out.print(separator + ANSI_WHITE_BACKGROUND + ANSI_BLACK + i + ANSI_RESET + endingSeparator);
             } else if (i <= amountOfDaysInMonth && i > 0) {
                 System.out.print(separator + i + endingSeparator);
             } else if (i > amountOfDaysInMonth) {
