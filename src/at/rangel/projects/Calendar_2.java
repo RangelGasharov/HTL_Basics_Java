@@ -18,7 +18,7 @@ public class Calendar_2 {
         int currentMonth = input();
 
         System.out.println("Please write down the " + ANSI_YELLOW + "first weekday of the current month" + ANSI_RESET + " (1 = Monday, 2 = Tuesday, 3 = Wednesday, etc. ");
-        int firstWeekDayOfMonth = input();
+        int firstWeekDayOfMonth = input() - 1;
 
         System.out.println("Please write down the " + ANSI_YELLOW + "current year" + ANSI_RESET);
         int currentYear = input();
