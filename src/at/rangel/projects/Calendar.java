@@ -13,7 +13,7 @@ public class Calendar {
 
         String[] nameOfTheDays = {"MON", "TUE", "WEN", "THU", "FRI", "SAT", "SUN"};
         String[] namesOfMonths = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
-        int calendarLength = 40;
+        int[] calendar = new int[42];
 
         LocalDateTime currentDate = LocalDateTime.now();
         LocalDate firstDateOfMonth = LocalDate.now().with(TemporalAdjusters.firstDayOfMonth());
@@ -39,13 +39,17 @@ public class Calendar {
         boolean isLeapYear = currentYear % 4 == 0;
         int amountOfDaysInMonth = month.length(isLeapYear);
         int titleLengthConsole = 42;
+        int additionalSpacing = 1;
+        if ((currentMonth.length() + currentYearString.length()) % 2 == 0) {
+            additionalSpacing = 0;
+        }
         int repeatNTimes = titleLengthConsole / 2 - currentMonth.length() / 2 - currentYearString.length() / 2;
         if (repeatNTimes <= 0) {
             repeatNTimes = 1;
         }
 
         System.out.println();
-        System.out.println(ANSI_BLACK + ANSI_WHITE_BACKGROUND + " ".repeat(repeatNTimes - 1) + currentMonth + " " + currentYearString + " ".repeat(repeatNTimes) + ANSI_RESET);
+        System.out.println(ANSI_BLACK + ANSI_WHITE_BACKGROUND + " ".repeat(repeatNTimes - additionalSpacing) + currentMonth + " " + currentYearString + " ".repeat(repeatNTimes) + ANSI_RESET);
 
         for (int i = 0; i < nameOfTheDays.length; i++) {
             String separator = " | ";
@@ -60,35 +64,43 @@ public class Calendar {
             System.out.print(separator + nameOfTheDays[i] + endingSeparator);
         }
 
-        for (int i = 1 - firstWeekDayOfMonthInt + 1; i < calendarLength; i++) {
+        for (int i = 0; i < calendar.length; i++) {
+            int j = i - firstWeekDayOfMonthInt + 1;
             String separator = "   | ";
             String endingSeparator = "";
+            if (j > 10) {
+                separator = "  | ";
+            }
 
-            if (i % 7 == firstWeekDayOfMonthInt && i != 0) {
+            calendar[i] = j;
+
+            if (j % 7 == 7 - firstWeekDayOfMonthInt || (j % 7 == 0 && firstWeekDayOfMonthInt == 0)) {
                 endingSeparator = "   |\n";
-                if (i >= 10) {
+                if (j >= 10) {
                     endingSeparator = "  |\n";
                 }
             }
 
-            if (i > 10) {
-                separator = "  | ";
-            }
-            if (i % 7 == 1 + firstWeekDayOfMonthInt || i == 1 - firstWeekDayOfMonthInt + 1) {
+            if (i % 7 == 0) {
                 separator = "| ";
             }
-            if (i == calendarLength - 1) {
+
+            if (i == calendar.length - 1) {
                 endingSeparator = "  |\n";
             }
 
-            if (i == dayOfMonth) {
-                System.out.print(separator + ANSI_WHITE_BACKGROUND + ANSI_BLACK + i + ANSI_RESET + endingSeparator);
-            } else if (i <= amountOfDaysInMonth && i > 0) {
-                System.out.print(separator + i + endingSeparator);
-            } else if (i > amountOfDaysInMonth) {
-                System.out.print(separator + "--" + endingSeparator);
+            if (j == dayOfMonth) {
+                System.out.print(separator + ANSI_WHITE_BACKGROUND + ANSI_BLACK + calendar[i] + ANSI_RESET + endingSeparator);
+            } else if (j <= amountOfDaysInMonth && j > 0) {
+                System.out.print(separator + calendar[i] + endingSeparator);
+            } else if (j <= 0) {
+                System.out.print(separator + " " + endingSeparator);
+            } else if (j <= 35 - firstWeekDayOfMonthInt && 36 >= amountOfDaysInMonth + firstWeekDayOfMonthInt) {
+                System.out.print(separator + "  " + endingSeparator);
+            } else if (j <= 42 - firstWeekDayOfMonthInt && 36 <= amountOfDaysInMonth + firstWeekDayOfMonthInt) {
+                System.out.print(separator + "  " + endingSeparator);
             } else {
-                System.out.print(separator + "-" + endingSeparator);
+                System.out.print("");
             }
         }
 
