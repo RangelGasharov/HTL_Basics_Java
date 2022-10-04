@@ -11,10 +11,11 @@ public class Car {
 
     public static final String ANSI_RESET = "\u001B[0m";
     public static final String ANSI_RED = "\u001B[31m";
+    public static final String ANSI_GREEN = "\u001B[32m";
     public static final String ANSI_YELLOW = "\u001B[33m";
     public static final String ANSI_BLUE = "\u001B[34m";
 
-    public Car(int fuelConsumption, String brand, String serialNumber, int fuelAmount, int reservoir) {
+    public Car(double fuelConsumption, String brand, String serialNumber, double fuelAmount, double reservoir) {
         this.fuelConsumption = fuelConsumption;
         this.brand = brand;
         this.serialNumber = serialNumber;
@@ -22,10 +23,20 @@ public class Car {
         this.reservoir = reservoir;
     }
 
+    public void technicalSpecifications() {
+        System.out.println("Technical specifications of " + ANSI_YELLOW + this.brand + " " + this.serialNumber + ANSI_RESET + ":");
+        System.out.println("Reservoir (in L): " + this.reservoir);
+        System.out.println("Fuel consumption (in L per 100km): " + this.fuelConsumption);
+        System.out.println("Current fuel amount (in L): " + this.fuelAmount);
+        System.out.println("Horse Power: " + this.getHorsePower());
+        System.out.println("Color of the car: " + this.getColor());
+        System.out.println("-".repeat(45));
+    }
+
     public void drive() {
         if (this.fuelAmount >= this.fuelConsumption) {
-            this.fuelAmount = this.fuelAmount - fuelConsumption;
-            System.out.println("I am driving");
+            this.fuelAmount -= fuelConsumption;
+            System.out.println(ANSI_GREEN + "I am driving" + ANSI_RESET);
         }
     }
 
@@ -42,6 +53,9 @@ public class Car {
     }
 
     public void honk(int amountOfRepetitions) {
+        if (amountOfRepetitions > 10) {
+            amountOfRepetitions = 10;
+        }
         for (int i = 0; i < amountOfRepetitions; i++) {
             System.out.println(ANSI_YELLOW + "Tutu!" + ANSI_RESET);
         }
@@ -49,6 +63,22 @@ public class Car {
 
     public void getRemainingRange() {
         double remainingRange = (this.fuelAmount / this.fuelConsumption) * 100;
-        System.out.println("Remaining distance in km: " + Math.round(remainingRange) + " km");
+        System.out.println("Remaining distance in km: " + Math.round(remainingRange));
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setHorsePower(int horsePower) {
+        this.horsePower = horsePower;
+    }
+
+    public int getHorsePower() {
+        return horsePower;
     }
 }
