@@ -22,7 +22,7 @@ public class Calendar {
         DayOfWeek dayOfWeekString = DayOfWeek.from(currentDate);
 
         int dayOfWeekInt = dayOfWeekString.getValue();
-        int firstWeekDayOfMonthInt = firstWeekDayOfMonthString.getValue();
+        int firstWeekDayOfMonthInt = firstWeekDayOfMonthString.getValue() - 1;
 
         DateTimeFormatter formattingObject = DateTimeFormatter.ofPattern("dd.MM.yyyy"); //"dd-MM-yyyy"
         DateTimeFormatter formattingObjectDayOnly = DateTimeFormatter.ofPattern("dd");
