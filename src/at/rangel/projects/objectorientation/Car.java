@@ -1,13 +1,11 @@
-package at.rangel.projects;
+package at.rangel.projects.objectorientation;
 
 public class Car {
-    public double fuelConsumption;
-    public double fuelAmount;
+    private Engine engine;
+    private Reservoir reservoir;
     public String brand;
     public String serialNumber;
-    public double reservoir;
     private String color;
-    private int horsePower;
 
     public static final String ANSI_RESET = "\u001B[0m";
     public static final String ANSI_RED = "\u001B[31m";
@@ -15,27 +13,27 @@ public class Car {
     public static final String ANSI_YELLOW = "\u001B[33m";
     public static final String ANSI_BLUE = "\u001B[34m";
 
-    public Car(double fuelConsumption, String brand, String serialNumber, double fuelAmount, double reservoir) {
-        this.fuelConsumption = fuelConsumption;
+    public Car(Engine engine, Reservoir reservoir, String brand, String serialNumber) {
+        this.engine = engine;
+        this.reservoir = reservoir;
         this.brand = brand;
         this.serialNumber = serialNumber;
-        this.fuelAmount = fuelAmount;
         this.reservoir = reservoir;
     }
 
     public void technicalSpecifications() {
         System.out.println("Technical specifications of " + ANSI_YELLOW + this.brand + " " + this.serialNumber + ANSI_RESET + ":");
-        System.out.println("Reservoir (in L): " + this.reservoir);
-        System.out.println("Fuel consumption (in L per 100km): " + this.fuelConsumption);
-        System.out.println("Current fuel amount (in L): " + this.fuelAmount);
-        System.out.println("Horse Power: " + this.getHorsePower());
+        System.out.println("Reservoir (in L): " + this.reservoir.getReservoir());
+        System.out.println("Fuel consumption (in L per 100km): " + this.engine.getFuelConsumption());
+        System.out.println("Current fuel amount (in L): " + this.reservoir.getFuelAmount());
+        System.out.println("Horse Power: " + this.getEngine().getHorsePower());
         System.out.println("Color of the car: " + this.getColor());
         System.out.println("-".repeat(45));
     }
 
     public void drive() {
-        if (this.fuelAmount >= this.fuelConsumption) {
-            this.fuelAmount -= fuelConsumption;
+        if (this.reservoir.getFuelAmount() >= this.engine.getFuelConsumption()) {
+            this.reservoir.setFuelAmount(this.reservoir.getFuelAmount() - this.engine.getFuelConsumption());
             System.out.println(ANSI_GREEN + "I am driving" + ANSI_RESET);
         }
     }
@@ -45,7 +43,7 @@ public class Car {
     }
 
     public void turboBoost() {
-        if (this.fuelAmount > this.reservoir / 10) {
+        if (this.reservoir.getFuelAmount() > this.reservoir.getReservoir() / 10) {
             System.out.println(ANSI_BLUE + "SuperBoostMode" + ANSI_RESET);
         } else {
             System.out.println(ANSI_RED + "Not enough fuel to go to Super-boost" + ANSI_RESET);
@@ -62,7 +60,7 @@ public class Car {
     }
 
     public void getRemainingRange() {
-        double remainingRange = (this.fuelAmount / this.fuelConsumption) * 100;
+        double remainingRange = (this.reservoir.getFuelAmount() / this.engine.getFuelConsumption()) * 100;
         System.out.println("Remaining distance in km: " + Math.round(remainingRange));
     }
 
@@ -74,11 +72,19 @@ public class Car {
         return color;
     }
 
-    public void setHorsePower(int horsePower) {
-        this.horsePower = horsePower;
+    public Engine getEngine() {
+        return engine;
     }
 
-    public int getHorsePower() {
-        return horsePower;
+    public void setEngine(Engine engine) {
+        this.engine = engine;
+    }
+
+    public Reservoir getReservoir() {
+        return reservoir;
+    }
+
+    public void setReservoir(Reservoir reservoir) {
+        this.reservoir = reservoir;
     }
 }

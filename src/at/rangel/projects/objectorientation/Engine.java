@@ -1,2 +1,32 @@
-package at.rangel.projects.objectorientation;public class Engine {
+package at.rangel.projects.objectorientation;
+
+public class Engine {
+
+    public enum TYPE {GAS, DIESEL}
+
+    private int horsePower;
+    private double fuelConsumption;
+    private TYPE type;
+
+    public Engine(int horsePower, double fuelConsumption, TYPE type) {
+        this.horsePower = horsePower;
+        this.fuelConsumption = fuelConsumption;
+        this.type = type;
+    }
+
+    public void drive(int speed) {
+        System.out.println("The motor is running with " + speed);
+    }
+
+    public int getHorsePower() {
+        return horsePower;
+    }
+
+    public TYPE getType() {
+        return type;
+    }
+
+    public double getFuelConsumption() {
+        return fuelConsumption;
+    }
 }

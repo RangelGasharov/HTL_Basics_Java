@@ -1,22 +1,31 @@
-package at.rangel.projects;
+package at.rangel.projects.objectorientation;
 
 public class ObjectOrientation_0 {
     public static void main(String[] args) {
 
-        Car c1 = new Car(7, "Audi", "A8237", 70, 270);
-        c1.setHorsePower(300);
+        Engine e1 = new Engine(300, 7, Engine.TYPE.DIESEL);
+        Reservoir r1 = new Reservoir(70, 270);
+        Car c1 = new Car(e1, r1, "Audi", "A8237");
         c1.setColor("red");
-        Car c2 = new Car(6, "Mercedes", "M2712", 80, 150);
-        c2.setHorsePower(500);
+
+        Engine e2 = new Engine(450, 6, Engine.TYPE.GAS);
+        Reservoir r2 = new Reservoir(80, 150);
+        Car c2 = new Car(e2, r2, "Mercedes", "M2712");
         c2.setColor("blue");
-        Car c3 = new Car(5, "BMW", "B7310", 120, 120);
-        c3.setHorsePower(620);
+
+        Engine e3 = new Engine(120, 5, Engine.TYPE.GAS);
+        Reservoir r3 = new Reservoir(120, 120);
+        Car c3 = new Car(e3, r3, "BMW", "B7310");
         c3.setColor("green");
-        Car c4 = new Car(5.5, "Renault", "R1829", 50, 165);
-        c4.setHorsePower(300);
+
+        Engine e4 = new Engine(500, 5.5, Engine.TYPE.DIESEL);
+        Reservoir r4 = new Reservoir(50, 165);
+        Car c4 = new Car(e4, r4, "Renault", "R1829");
         c4.setColor("black");
-        Car c5 = new Car(4.2, "Kia", "K9182", 85, 180);
-        c5.setHorsePower(250);
+
+        Engine e5 = new Engine(300, 4, Engine.TYPE.GAS);
+        Reservoir r5 = new Reservoir(85, 180);
+        Car c5 = new Car(e5, r5, "Kia", "K9182");
         c5.setColor("white");
 
         c1.technicalSpecifications();
