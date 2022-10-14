@@ -1,7 +1,11 @@
 package at.rangel.projects.objectorientation;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Car {
     private Engine engine;
+    private List<RearMirror> mirrors;
     private Reservoir reservoir;
     public String brand;
     public String serialNumber;
@@ -18,7 +22,15 @@ public class Car {
         this.reservoir = reservoir;
         this.brand = brand;
         this.serialNumber = serialNumber;
-        this.reservoir = reservoir;
+        this.mirrors = new ArrayList<>();
+    }
+
+    public void addMirror(RearMirror rearMirror) {
+        this.mirrors.add(rearMirror);
+    }
+
+    public List<RearMirror> getMirrors() {
+        return mirrors;
     }
 
     public void technicalSpecifications() {
@@ -26,16 +38,27 @@ public class Car {
         System.out.println("Reservoir (in L): " + this.reservoir.getReservoir());
         System.out.println("Fuel consumption (in L per 100km): " + this.engine.getFuelConsumption());
         System.out.println("Current fuel amount (in L): " + this.reservoir.getFuelAmount());
-        System.out.println("Horse Power: " + this.getEngine().getHorsePower());
+        System.out.println("Horse Power: " + this.engine.getHorsePower());
         System.out.println("Color of the car: " + this.getColor());
         System.out.println("-".repeat(45));
     }
 
-    public void drive() {
+    public void drive(int speed) {
+        double speedFactor = calculateSpeedFactor(speed);
+        System.out.println("Speed Factor: " + speedFactor);
         if (this.reservoir.getFuelAmount() >= this.engine.getFuelConsumption()) {
             this.reservoir.setFuelAmount(this.reservoir.getFuelAmount() - this.engine.getFuelConsumption());
             System.out.println(ANSI_GREEN + "I am driving" + ANSI_RESET);
+        } else {
+            this.reservoir.setFuelAmount(0);
         }
+        if (this.reservoir.getFuelAmount() == 0) {
+            System.out.println(ANSI_RED + "No more fuel!" + ANSI_RESET);
+        }
+    }
+
+    public double calculateSpeedFactor(int speed) {
+        return 1 + speed * 0.015;
     }
 
     public void toBreak() {
@@ -62,6 +85,10 @@ public class Car {
     public void getRemainingRange() {
         double remainingRange = (this.reservoir.getFuelAmount() / this.engine.getFuelConsumption()) * 100;
         System.out.println("Remaining distance in km: " + Math.round(remainingRange));
+    }
+
+    public void getFuelAmount() {
+        System.out.println("Remaining fuel: " + this.reservoir.getFuelAmount());
     }
 
     public void setColor(String color) {
