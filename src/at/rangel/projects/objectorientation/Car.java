@@ -6,6 +6,7 @@ import java.util.List;
 public class Car {
     private Engine engine;
     private List<RearMirror> mirrors;
+    private List<Tire> tires;
     private Reservoir reservoir;
     public String brand;
     public String serialNumber;
@@ -23,14 +24,23 @@ public class Car {
         this.brand = brand;
         this.serialNumber = serialNumber;
         this.mirrors = new ArrayList<>();
+        this.tires = new ArrayList<>();
     }
 
     public void addMirror(RearMirror rearMirror) {
         this.mirrors.add(rearMirror);
     }
 
+    public void addTires(Tire tire) {
+        this.tires.add(tire);
+    }
+
     public List<RearMirror> getMirrors() {
         return mirrors;
+    }
+
+    public List<Tire> getTires() {
+        return tires;
     }
 
     public void technicalSpecifications() {

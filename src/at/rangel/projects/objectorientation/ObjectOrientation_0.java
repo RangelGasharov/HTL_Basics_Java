@@ -7,13 +7,27 @@ public class ObjectOrientation_0 {
         Reservoir res1 = new Reservoir(70, 270);
         RearMirror r1_1 = new RearMirror(100, 0);
         RearMirror r1_2 = new RearMirror(90, -40);
+        Tire t1_1 = new Tire(300, 1, Tire.TYPE.SUMMER_TIRES);
+        Tire t1_2 = new Tire(300, 2, Tire.TYPE.SUMMER_TIRES);
+        Tire t1_3 = new Tire(300, 3, Tire.TYPE.SUMMER_TIRES);
+        Tire t1_4 = new Tire(300, 4, Tire.TYPE.SUMMER_TIRES);
+
         Car c1 = new Car(e1, res1, "Audi", "A8237");
         c1.setColor("red");
         c1.addMirror(r1_1);
         c1.addMirror(r1_2);
+        c1.addTires(t1_1);
+        c1.addTires(t1_2);
+        c1.addTires(t1_3);
+        c1.addTires(t1_4);
+
+        System.out.println("Position of first mirror: " + c1.getMirrors().get(0).getPosition());
+        System.out.println("Diameter of first tire (in mm): " + c1.getTires().get(0).getDiameter());
+        System.out.println("_".repeat(45));
 
         Engine e2 = new Engine(450, 6, Engine.TYPE.GAS);
         Reservoir res2 = new Reservoir(80, 150);
+
         Car c2 = new Car(e2, res2, "Mercedes", "M2712");
         c2.setColor("blue");
 
