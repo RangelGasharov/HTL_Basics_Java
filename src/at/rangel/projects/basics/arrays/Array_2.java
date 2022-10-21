@@ -14,7 +14,7 @@ public class Array_2 {
 
         System.out.println("");
         System.out.println("For-Each:");
-        for(int number: sampleArray){
+        for (int number : sampleArray) {
             total += number;
             System.out.println("+ " + number);
         }

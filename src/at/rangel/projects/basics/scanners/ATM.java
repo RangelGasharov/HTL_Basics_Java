@@ -1,9 +1,7 @@
-package at.rangel.projects;
-
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class Bankomat {
+public class ATM {
     public static void main(String[] args) {
 
         final int CANCEL = 4;
@@ -65,9 +63,6 @@ public class Bankomat {
                     System.out.println();
 
             }
-
         }
     }
 }
-
-/*https://www.java-forum.org/thema/inputmismatchexception-try-and-catch.176051/*/

@@ -1,4 +1,4 @@
-package at.rangel.projects;
+package at.rangel.projects.basics.scanners;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
