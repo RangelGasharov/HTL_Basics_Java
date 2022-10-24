@@ -1,4 +1,4 @@
-package at.rangel.projects;
+package at.rangel.projects.basics.loops;
 
 import java.util.Random;
 

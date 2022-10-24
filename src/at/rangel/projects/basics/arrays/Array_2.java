@@ -1,4 +1,4 @@
-package at.rangel.projects;
+package at.rangel.projects.basics.arrays;
 
 public class Array_2 {
     public static void main(String[] args) {

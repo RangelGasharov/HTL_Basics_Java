@@ -1,4 +1,4 @@
-package at.rangel.projects;
+package at.rangel.projects.basics.arrays;
 
 import java.util.Arrays;
 import java.util.Collections;

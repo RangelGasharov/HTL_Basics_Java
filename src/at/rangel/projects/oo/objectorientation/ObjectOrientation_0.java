@@ -1,4 +1,4 @@
-package at.rangel.projects.objectorientation;
+package at.rangel.projects.oo.objectorientation;
 
 public class ObjectOrientation_0 {
     public static void main(String[] args) {

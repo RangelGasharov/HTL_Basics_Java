@@ -1,4 +1,4 @@
-package at.rangel.projects.remote;
+package at.rangel.projects.oo.remote;
 
 public class Main {
     public static void main(String[] args) {

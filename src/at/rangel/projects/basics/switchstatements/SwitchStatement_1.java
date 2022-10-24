@@ -1,4 +1,4 @@
-package at.rangel.projects;
+package at.rangel.projects.basics.switchstatements;
 
 import java.util.Random;
 

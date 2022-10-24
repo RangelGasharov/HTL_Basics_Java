@@ -1,4 +1,4 @@
-package at.rangel.projects.objectorientation;
+package at.rangel.projects.oo.objectorientation;
 
 public class Tire {
     public enum TYPE {SUMMER_TIRES, WINTER_TIRES}

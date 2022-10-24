@@ -1,4 +1,4 @@
-package at.rangel.projects.remote;
+package at.rangel.projects.oo.remote;
 
 import java.util.ArrayList;
 import java.util.List;

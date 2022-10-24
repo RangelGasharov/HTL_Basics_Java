@@ -1,4 +1,4 @@
-package at.rangel.projects.objectorientation;
+package at.rangel.projects.oo.objectorientation;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package at.rangel.projects;
+package at.rangel.projects.basics.loops;
 
 public class Demo {
     public static void main(String[] args) {

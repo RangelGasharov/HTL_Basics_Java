@@ -1,4 +1,4 @@
-package at.rangel.projects;
+package at.rangel.projects.basics.minigames;
 
 import java.util.Arrays;
 import java.util.InputMismatchException;

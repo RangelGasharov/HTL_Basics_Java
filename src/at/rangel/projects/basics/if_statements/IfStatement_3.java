@@ -1,8 +1,8 @@
-package at.rangel.projects;
+package at.rangel.projects.basics.if_statements;
 
 import java.util.Random;
 
-public class IfBedingung_3 {
+public class IfStatement_3 {
     public static void main(String[] args) {
 
         Random random = new Random();

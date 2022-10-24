@@ -1,4 +1,4 @@
-package at.rangel.projects.cars;
+package at.rangel.projects.oo.cars;
 
 public class Manufacturer {
     private String nameOfManufacturer;

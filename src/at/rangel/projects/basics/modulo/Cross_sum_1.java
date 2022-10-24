@@ -1,4 +1,4 @@
-package at.rangel.projects;
+package at.rangel.projects.basics.modulo;
 
 public class Cross_sum_1 {
     public static void main(String[] args) {
