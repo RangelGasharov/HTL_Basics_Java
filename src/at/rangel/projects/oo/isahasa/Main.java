@@ -8,9 +8,10 @@ public class Main {
         Zoo zoo = new Zoo("Tiergarten Schönbrunn", "Maxingstraße 13b");
         zoo.addAnimal(a1);
         zoo.addAnimal(a2);
-        zoo.printAnimals();
 
         Dog d1 = new Dog(30, 50);
         d1.bark();
+        zoo.addAnimal(d1);
+        zoo.printAnimals();
     }
 }
