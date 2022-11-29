@@ -10,7 +10,7 @@ public class SimCard {
     }
 
     public void doCall(String phoneNumber) {
-
+        System.out.println("The number " + phoneNumber + " is getting called...");
     }
 
     public int getId() {

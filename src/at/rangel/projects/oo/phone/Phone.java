@@ -12,6 +12,22 @@ public class Phone {
         this.camera = camera;
     }
 
+    public void takePicture(double currentResolution) {
+        this.getCamera().makePicture(currentResolution);
+    }
+
+    public void makeCall(String phoneNumber) {
+        this.getSimCard().doCall(phoneNumber);
+    }
+
+    public double getFreeSpace() {
+        return this.getSdCard().getFreeSpace();
+    }
+
+    public void getAllFiles() {
+
+    }
+
     public SimCard getSimCard() {
         return simCard;
     }
@@ -22,5 +38,13 @@ public class Phone {
 
     public Camera getCamera() {
         return camera;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
     }
 }
