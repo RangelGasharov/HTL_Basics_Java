@@ -17,8 +17,11 @@ public class SDCard {
         this.phoneFiles.add(phoneFile);
     }
 
-    public List<PhoneFile> getAllFiles() {
-        return phoneFiles;
+    public void getAllFiles() {
+
+        for (int i = 0; i < phoneFiles.size(); i++) {
+           phoneFiles.get(i).getInfo();
+        }
     }
 
     public double getFreeSpace() {

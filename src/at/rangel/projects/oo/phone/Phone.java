@@ -13,7 +13,8 @@ public class Phone {
     }
 
     public void takePicture(double currentResolution) {
-        this.getCamera().makePicture(currentResolution);
+        PhoneFile currentPicture = this.getCamera().makePicture(currentResolution);
+        this.getSdCard().saveFile(currentPicture);
     }
 
     public void makeCall(String phoneNumber) {
@@ -24,8 +25,8 @@ public class Phone {
         return this.getSdCard().getFreeSpace();
     }
 
-    public void getAllFiles() {
-
+    public void printAllFiles() {
+        this.getSdCard().getAllFiles();
     }
 
     public SimCard getSimCard() {
