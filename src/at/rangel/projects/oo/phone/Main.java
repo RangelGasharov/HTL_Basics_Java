@@ -26,7 +26,9 @@ public class Main {
         sdCard1.saveFile(f1);
         sdCard1.saveFile(f2);
         sdCard1.saveFile(f3);
-        phone1.printAllFiles();
-        System.out.println("Free available space: " + phone1.getFreeSpace());
+
+        System.out.println("-".repeat(40));
+        PhoneGUI phoneGUI = new PhoneGUI(phone1);
+        phoneGUI.run();
     }
 }

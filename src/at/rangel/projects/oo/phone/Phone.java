@@ -13,20 +13,20 @@ public class Phone {
     }
 
     public void takePicture(double currentResolution) {
-        PhoneFile currentPicture = this.getCamera().makePicture(currentResolution);
-        this.getSdCard().saveFile(currentPicture);
+        PhoneFile currentPicture = this.camera.makePicture(currentResolution);
+        this.sdCard.saveFile(currentPicture);
     }
 
     public void makeCall(String phoneNumber) {
-        this.getSimCard().doCall(phoneNumber);
+        this.simCard.doCall(phoneNumber);
     }
 
     public double getFreeSpace() {
-        return this.getSdCard().getFreeSpace();
+        return this.sdCard.getFreeSpace();
     }
 
     public void printAllFiles() {
-        this.getSdCard().getAllFiles();
+        this.sdCard.getAllFiles();
     }
 
     public SimCard getSimCard() {

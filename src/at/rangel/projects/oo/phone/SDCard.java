@@ -20,7 +20,7 @@ public class SDCard {
     public void getAllFiles() {
 
         for (int i = 0; i < phoneFiles.size(); i++) {
-           phoneFiles.get(i).getInfo();
+            phoneFiles.get(i).getInfo();
         }
     }
 
