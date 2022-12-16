@@ -8,4 +8,12 @@ public class Manufacturer {
         this.nameOfManufacturer = nameOfManufacturer;
         this.countryOfManufacturer = countryOfManufacturer;
     }
+
+    public String getNameOfManufacturer() {
+        return nameOfManufacturer;
+    }
+
+    public String getCountryOfManufacturer() {
+        return countryOfManufacturer;
+    }
 }

@@ -8,4 +8,12 @@ public class CameraLens {
         this.focalLength = focalLength;
         this.manufacturer = manufacturer;
     }
+
+    public double getFocalLength() {
+        return focalLength;
+    }
+
+    public Manufacturer getManufacturer() {
+        return manufacturer;
+    }
 }

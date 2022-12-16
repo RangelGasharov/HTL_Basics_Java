@@ -14,5 +14,8 @@ public class Main {
 
         Camera cam1 = new Camera(nikon, lens1, Camera.TYPE.LARGE, Color.GREEN, 0.75);
         Camera cam2 = new Camera(canon, lens2, Camera.TYPE.LARGE, Color.BLACK, 1.2);
+
+        CameraGUI cameraGUI = new CameraGUI(cam1);
+        cameraGUI.run();
     }
 }
