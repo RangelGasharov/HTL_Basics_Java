@@ -29,4 +29,12 @@ public class SDCard {
             photo.getInfo();
         }
     }
+
+    public double getCapacity() {
+        return capacity;
+    }
+
+    public List<Photo> getPhotos() {
+        return photos;
+    }
 }
