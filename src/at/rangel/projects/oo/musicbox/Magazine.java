@@ -2,16 +2,26 @@ package at.rangel.projects.oo.musicbox;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public class Magazine {
     private List<Record> records;
     private Record loadedRecord;
+    private int maxAmountOfRecords;
 
     public Magazine() {
         this.records = new ArrayList<>();
+        this.maxAmountOfRecords = 50;
     }
 
     public void addRecord(Record record) {
+        int amountOfRecords = getRecords().size();
+        if (amountOfRecords > maxAmountOfRecords - 1) {
+            System.out.println("There are already " + maxAmountOfRecords + " plates in the music box!");
+            return;
+        } else if (amountOfRecords == maxAmountOfRecords - 1) {
+            System.out.println("Maximum amount of plates has been reached!");
+        }
         this.records.add(record);
     }
 
@@ -30,18 +40,14 @@ public class Magazine {
         return sum;
     }
 
-    public List<Record> findRecord(String name) {
+    public List<Record> findRecord(String titleName) {
         List<Record> foundRecords = new ArrayList<>();
         for (Record record : records) {
-            if (record.getName().contains(name)) {
+            if (record.getName().toLowerCase(Locale.ROOT).contains(titleName)) {
                 foundRecords.add(record);
             }
         }
         return foundRecords;
-    }
-
-    public List<Record> getRecords() {
-        return records;
     }
 
     public void loadRecord(Record record) {
@@ -50,7 +56,6 @@ public class Magazine {
     }
 
     public void play(int num) {
-        num = num - 1;
         if (this.loadedRecord == null) {
             System.out.println("Nothing is loaded.");
         } else {
@@ -61,5 +66,17 @@ public class Magazine {
             Title title = this.loadedRecord.getTitles().get(num);
             System.out.println("Playing: " + title.getName());
         }
+    }
+
+    public List<Record> getRecords() {
+        return records;
+    }
+
+    public Record getLoadedRecord() {
+        return loadedRecord;
+    }
+
+    public int getMaxAmountOfRecords() {
+        return maxAmountOfRecords;
     }
 }
